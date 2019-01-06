@@ -1,29 +1,41 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View} from 'react-native';
-import { createAppContainer, createStackNavigator } from 'react-navigation'
+import { createAppContainer, createStackNavigator, createDrawerNavigator } from 'react-navigation'
 import { Button,Icon } from 'native-base'
 
 import HomeScreen from './components/Home/HomeScreen.js'
 import SearchTabNavigator from './components/Search/SearchTabNavigator.js'
+import DeveloperInfo from './components/Drawer/DeveloperInfo.js'
 
 const AppNavigator = createStackNavigator({
     HomeScreen: {
         screen: HomeScreen,
         navigationOptions: () => ({
-            title: 'GoogleBooks',
-            headerBackTitle: null,
-            header: null
+            drawerLabel: 'Home'
         }),
     },
     SearchTabNavigator: {
-        screen: SearchTabNavigator
+        screen: SearchTabNavigator,
+        navigationOptions: () => ({
+            drawerLabel: 'Search'
+        }),
+
     }
 }, {
-    initialRouteName: 'HomeScreen',
     headerMode: 'none',
-    headerTransitionPreset: 'uikit'
 })
 
-const AppContainer = createAppContainer(AppNavigator);
+const AppDrawerNavigator = createDrawerNavigator({
+    Explorar: {
+    screen: AppNavigator,
+    },
+    Desenvolvedor: {
+        screen: DeveloperInfo
+    }
+}, {
+
+})
+
+const AppContainer = createAppContainer(AppDrawerNavigator);
 
 export default AppContainer;

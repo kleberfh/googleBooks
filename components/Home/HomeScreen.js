@@ -7,7 +7,7 @@ import {
     StatusBar
 } from 'react-native';
 
-import { Button } from 'native-base'
+import { Button, Icon } from 'native-base'
 
 var backgroundImage = require('../../assets/background2.jpeg');
 
