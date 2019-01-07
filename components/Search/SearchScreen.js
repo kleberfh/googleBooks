@@ -14,7 +14,7 @@ class SearchScreen extends Component {
 
     state = {
         apiUrl: 'https://www.googleapis.com/books/v1/volumes?',
-        apiToken: 'AIzaSyB2wMMftpwaUuQ0wfVf69KBNZJ_0tW1REs',
+        apiToken: '',
         searchBook:'',
         booksFound: false,
         booksData: {}
