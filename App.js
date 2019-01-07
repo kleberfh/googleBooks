@@ -4,6 +4,7 @@ import { createAppContainer, createStackNavigator, createDrawerNavigator } from 
 import { Button,Icon } from 'native-base'
 
 import HomeScreen from './components/Home/HomeScreen.js'
+import SearchScreen from './components/Search/SearchScreen.js'
 import SearchTabNavigator from './components/Search/SearchTabNavigator.js'
 import DeveloperInfo from './components/Drawer/DeveloperInfo.js'
 
@@ -15,21 +16,29 @@ const AppNavigator = createStackNavigator({
         }),
     },
     SearchTabNavigator: {
-        screen: SearchTabNavigator,
+        screen: SearchTabNavigator
+    },
+    SearchScreen: {
+        screen: SearchScreen,
         navigationOptions: () => ({
-            drawerLabel: 'Search'
-        }),
-
+            drawerLabel: 'Buscar'
+        })
     }
-}, {
+},{
     headerMode: 'none',
 })
 
 const AppDrawerNavigator = createDrawerNavigator({
-    Explorar: {
+    'Explorar': {
     screen: AppNavigator,
     },
-    Desenvolvedor: {
+    'Buscar Livro': {
+        screen: SearchScreen
+    },
+    'Desenvolvedor': {
+        screen: DeveloperInfo
+    },
+    'Favoritos': {
         screen: DeveloperInfo
     }
 }, {

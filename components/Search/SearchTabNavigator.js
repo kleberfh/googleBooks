@@ -8,8 +8,11 @@ import {
 } from 'react-native';
 import { Container, Header, Content, Left, Body, Right, Button, Icon, Title } from 'native-base';
 import { DrawerActions } from 'react-navigation'
+import * as Animatable from 'react-native-animatable'
 
 class SearchTabNavigator extends Component {
+
+    handleViewRef = ref => this.view = ref;
 
     static navigationOptions = {
         drawerLabel: 'SearchTabNavigator',
@@ -22,24 +25,31 @@ class SearchTabNavigator extends Component {
         return (
             <View style={styles.containerStyle}>
             <Container style={{backgroundColor: '#ffd829'}}>
-            <Header style={styles.headerStyle}>
-                <Left>
-                    <Button
-                    transparent
-                    onPress={() => this.props.navigation.toggleDrawer()}
-                    >
-                        <Icon style={{color: 'black', fontSize: 25, left: 20}} type='MaterialIcons' name='menu'/>
-                    </Button>
-                </Left>
-                <Body>
-                    <Title styles={{fontWeight: '100'}}> Explorar </Title>
-                </Body>
-                <Right>
-                    <Button transparent>
-                        <Icon style={{color: 'black', fontSize: 25, right: 10}} type='MaterialIcons' name='search'/>
-                    </Button>
-                </Right>
-            </Header>
+            <View>
+                <Animatable.View animation="fadeIn">
+                <Header style={styles.headerStyle}>
+                    <Left>
+                        <Button
+                        transparent
+                        onPress={() => this.props.navigation.toggleDrawer()}
+                        >
+                            <Icon style={{color: 'black', fontSize: 25, left: 20}} type='MaterialIcons' name='menu'/>
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title styles={{fontWeight: '100'}}> Explorar </Title>
+                    </Body>
+                    <Right>
+                        <Button
+                        transparent
+                        onPress={() => this.props.navigation.navigate('SearchScreen')}
+                        >
+                            <Icon style={{color: 'black', fontSize: 25, right: 10}} type='MaterialIcons' name='search'/>
+                        </Button>
+                    </Right>
+                </Header>
+                </Animatable.View>
+            </View>
             <StatusBar barStyle="dark-content" />
             <Content>
                 <Text style={{paddingTop: 20, fontSize: 20, fontWeight: '200', textAlign: 'center', padding: 10}}>Clique na lupa a cima para buscar por um livro.</Text>
