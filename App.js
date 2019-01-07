@@ -35,12 +35,12 @@ const AppDrawerNavigator = createDrawerNavigator({
     'Buscar Livro': {
         screen: SearchScreen
     },
+    'Favoritos': {
+        screen: DeveloperInfo
+    },
     'Desenvolvedor': {
         screen: DeveloperInfo
     },
-    'Favoritos': {
-        screen: DeveloperInfo
-    }
 }, {
 
 })

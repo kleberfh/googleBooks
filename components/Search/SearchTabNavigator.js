@@ -53,7 +53,7 @@ class SearchTabNavigator extends Component {
             <StatusBar barStyle="dark-content" />
             <Content>
                 <Text style={{paddingTop: 20, fontSize: 20, fontWeight: '200', textAlign: 'center', padding: 10}}>Clique na lupa a cima para buscar por um livro.</Text>
-                <Text style={{fontSize: 20, fontWeight: '100', textAlign: 'center', padding: 10}}>Você pode digitar títulos, autores ou categorias</Text>
+                <Text style={{fontSize: 20, fontWeight: '100', textAlign: 'center', padding: 10}}>Você pode digitar títulos ou autores</Text>
             </Content>
             </Container>
             </View>
