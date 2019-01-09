@@ -7,6 +7,7 @@ import HomeScreen from './components/Home/HomeScreen.js'
 import SearchScreen from './components/Search/SearchScreen.js'
 import SearchTabNavigator from './components/Search/SearchTabNavigator.js'
 import DeveloperInfo from './components/Drawer/DeveloperInfo.js'
+import BookInfo from './components/Search/BookInfo.js'
 
 const AppNavigator = createStackNavigator({
     HomeScreen: {
@@ -17,6 +18,9 @@ const AppNavigator = createStackNavigator({
     },
     SearchTabNavigator: {
         screen: SearchTabNavigator
+    },
+    BookInfo: {
+        screen: BookInfo
     },
     SearchScreen: {
         screen: SearchScreen,
@@ -31,12 +35,6 @@ const AppNavigator = createStackNavigator({
 const AppDrawerNavigator = createDrawerNavigator({
     'Explorar': {
     screen: AppNavigator,
-    },
-    'Buscar Livro': {
-        screen: SearchScreen
-    },
-    'Favoritos': {
-        screen: DeveloperInfo
     },
     'Desenvolvedor': {
         screen: DeveloperInfo

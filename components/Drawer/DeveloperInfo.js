@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
-    StyleSheet
+    StyleSheet,
+    Image
 } from 'react-native';
 
 class DeveloperInfo extends Component {
     render() {
         return (
             <View style={styles.containerStyle}>
+                <Image source={{ uri: 'https://avatars3.githubusercontent.com/u/27457478?s=460&v=4'}} style={{width: 400, height: 400}}/>
                 <Text>Kleber Fernando</Text>
             </View>
         )

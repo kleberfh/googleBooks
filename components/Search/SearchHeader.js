@@ -3,6 +3,7 @@ import {
     View
 } from 'react-native';
 import { Container, Header, Icon, Item, Input } from 'native-base';
+import { Sae } from 'react-native-textinput-effects';
 
 class SearchHeader extends Component {
 

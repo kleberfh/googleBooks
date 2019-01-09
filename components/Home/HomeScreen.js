@@ -9,7 +9,7 @@ import {
 
 import { Button, Icon } from 'native-base'
 
-var backgroundImage = require('../../assets/background2.jpeg');
+let backgroundImage = require('../../assets/background.jpeg');
 
 class HomeScreen extends Component {
     render() {

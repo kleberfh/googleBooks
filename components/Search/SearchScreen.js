@@ -14,7 +14,7 @@ class SearchScreen extends Component {
 
     state = {
         apiUrl: 'https://www.googleapis.com/books/v1/volumes?',
-        apiToken: '',
+        apiToken: 'AIzaSyB2wMMftpwaUuQ0wfVf69KBNZJ_0tW1REs',
         searchBook:'',
         booksFound: false,
         booksData: {}
@@ -50,7 +50,7 @@ class SearchScreen extends Component {
     }
 
     renderContent = () => {
-        if(this.state.booksData){
+        if(this.state.booksData[0]){
             return <View>
                 {
                     <Text>Oi</Text>
@@ -64,15 +64,12 @@ class SearchScreen extends Component {
     render() {
         return (
             <View>
-                <Container>
+                <Container style={{backgroundColor: 'red'}}>
                     <SearchHeader
                         value={this.state.searchBook}
                         onChangeText={(searchBook) => this.setState({searchBook})}
                         bookSearch={this.bookSearch}
                     />
-                    <Content>
-                        {this.renderContent()}
-                    </Content>
                 </Container>
             </View>
         )
